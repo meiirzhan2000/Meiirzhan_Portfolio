@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './HeroStyles.module.scss';
-import heroImg from '../../assets/profileImage.png';
+import heroImg from '../../assets/delProfile.webp';
 import sun from '../../assets/sun.svg';
 import moon from '../../assets/moon.svg';
 import twitterLight from '../../assets/twitter-light.svg';
