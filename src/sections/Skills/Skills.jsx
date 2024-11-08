@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './SkillsStyles.module.css';
 import { useTheme } from '../../common/ThemeContext';
 import { 
@@ -25,44 +26,48 @@ function Skills() {
       <h1 className="sectionTitle">Skills</h1>
       
       {/* Technical Skills */}
-      <h2 className="sectionSubtitle" style={ {paddingBottom: '40px'} }>Technical Skills</h2>
+      <h2 className="sectionSubtitle" style={{ paddingBottom: '40px' }}>Technical Skills</h2>
       <div className={styles.skillList}>
-        <SkillList icon={<DiHtml5 color={iconColor} />} skill="HTML" />
-        <SkillList icon={<DiCss3 color={iconColor} />} skill="CSS" />
-        <SkillList icon={<DiJavascript color={iconColor} />} skill="JavaScript" />
-        <SkillList icon={<DiReact color={iconColor} />} skill="React" />
-        <SkillList icon={<RiFlutterLine color={iconColor} />} skill="Flutter" />
-        <SkillList icon={<TbBrandReactNative color={iconColor} />} skill="React Native" />
-        <SkillList icon={<DiNodejs color={iconColor} />} skill="Node.js" />
-        <SkillList icon={<DiGit color={iconColor} />} skill="Git" />
-        <SkillList icon={<DiBootstrap color={iconColor} />} skill="Bootstrap" />
+        <SkillList icon={<DiHtml5 color={iconColor} />} skill="HTML" info="Markup language used for structuring web content." />
+        <SkillList icon={<DiCss3 color={iconColor} />} skill="CSS" info="Style sheet language used for describing the presentation of a document." />
+        <SkillList icon={<DiJavascript color={iconColor} />} skill="JavaScript" info="High-level programming language for web development." />
+        <SkillList icon={<DiReact color={iconColor} />} skill="React" info="JavaScript library for building user interfaces." />
+        <SkillList icon={<RiFlutterLine color={iconColor} />} skill="Flutter" info="UI toolkit for building natively compiled applications." />
+        <SkillList icon={<TbBrandReactNative color={iconColor} />} skill="React Native" info="Framework for building native apps using React." />
+        <SkillList icon={<DiNodejs color={iconColor} />} skill="Node.js" info="JavaScript runtime built on Chrome's V8 JavaScript engine." />
+        <SkillList icon={<DiGit color={iconColor} />} skill="Git" info="Version control system for tracking changes in source code." />
+        <SkillList icon={<DiBootstrap color={iconColor} />} skill="Bootstrap" info="CSS framework for building responsive, mobile-first websites." />
       </div>
+      
       <hr />
+      
       <div className={styles.skillList}>
-        <SkillList icon={<DiJava color={iconColor} />} skill="Java" />
-        <SkillList icon={<TbBrandKotlin color={iconColor} />} skill="Kotlin" />
-        <SkillList icon={<TbBrandCSharp color={iconColor} />} skill="C#" />
-        <SkillList icon={<DiPython color={iconColor} />} skill="Python" />
-        <SkillList icon={<TbSql color={iconColor} />} skill="SQL" />
-        <SkillList icon={<TbDatabaseSearch color={iconColor} />} skill="Database Management" />
-        <SkillList icon={<DiMysql color={iconColor} />} skill="MySQL" />
-        <SkillList icon={<DiAws color={iconColor} />} skill="AWS Cloud Solutions" />
-        <SkillList icon={<DiGoogleCloudPlatform color={iconColor} />} skill="Google Cloud Platform" />
+        <SkillList icon={<DiJava color={iconColor} />} skill="Java" info="General-purpose, object-oriented programming language." />
+        <SkillList icon={<TbBrandKotlin color={iconColor} />} skill="Kotlin" info="Cross-platform, statically typed programming language." />
+        <SkillList icon={<TbBrandCSharp color={iconColor} />} skill="C#" info="Modern, object-oriented programming language developed by Microsoft." />
+        <SkillList icon={<DiPython color={iconColor} />} skill="Python" info="High-level, general-purpose programming language." />
+        <SkillList icon={<TbSql color={iconColor} />} skill="SQL" info="Standard language for accessing and managing databases." />
+        <SkillList icon={<TbDatabaseSearch color={iconColor} />} skill="Database Management" info="Skills in managing and maintaining databases." />
+        <SkillList icon={<DiMysql color={iconColor} />} skill="MySQL" info="Open-source relational database management system." />
+        <SkillList icon={<DiAws color={iconColor} />} skill="AWS Cloud Solutions" info="Experience with Amazon Web Services for cloud solutions." />
+        <SkillList icon={<DiGoogleCloudPlatform color={iconColor} />} skill="Google Cloud Platform" info="Knowledge of Google Cloud services for cloud computing." />
       </div>
+      
       <hr />
+      
       <div className={styles.skillList}>
-        <SkillList icon={<DiAndroid color={iconColor} />} skill="Android Development" />
-        <SkillList icon={<DiApple color={iconColor} />} skill="iOS Development" />
+        <SkillList icon={<DiAndroid color={iconColor} />} skill="Android Development" info="Developing applications for Android devices." />
+        <SkillList icon={<DiApple color={iconColor} />} skill="iOS Development" info="Developing applications for Apple devices." />
       </div>
 
       {/* Other Skills */}
-      <h2 className="sectionSubtitle" style = { paddingStyle }>Other Skills</h2>
+      <h2 className="sectionSubtitle" style={paddingStyle}>Other Skills</h2>
       <div className={styles.skillList}>
-        <SkillList icon={<GrAchievement color={iconColor} />} skill="Achievement-Oriented" />
-        <SkillList icon={<GrUserManager color={iconColor} />} skill="Leadership" />
-        <SkillList icon={<GrTime color={iconColor} />} skill="Time Management" />
-        <SkillList icon={<GrTask color={iconColor} />} skill="Multitasking" />
-        <SkillList icon={<GrGroup color={iconColor} />} skill="Teamwork" />
+        <SkillList icon={<GrAchievement color={iconColor} />} skill="Achievement-Oriented" info="Driven by setting and achieving challenging goals." />
+        <SkillList icon={<GrUserManager color={iconColor} />} skill="Leadership" info="Experience in leading and managing teams effectively." />
+        <SkillList icon={<GrTime color={iconColor} />} skill="Time Management" info="Ability to manage time efficiently and prioritize tasks." />
+        <SkillList icon={<GrTask color={iconColor} />} skill="Multitasking" info="Skilled in handling multiple tasks simultaneously." />
+        <SkillList icon={<GrGroup color={iconColor} />} skill="Teamwork" info="Effective collaboration with team members to achieve objectives." />
       </div>
     </section>
   );

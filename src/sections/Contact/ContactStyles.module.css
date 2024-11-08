@@ -1,79 +1,167 @@
+/* Container for form */
 .container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.sectionTitle {
+  padding-bottom: 40px;
+}
+
+/* Form styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+/* Text input and textarea styling */
+textarea,
+input:not([type='submit']) {
+  height: 50px;
+  padding-left: 16px;
+  width: 100%;
+  max-width: 600px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+textarea {
+  padding-top: 16px;
+  resize: none;
+  height: 200px;
+}
+
+/* Make form fields wider on larger screens */
+@media (min-width: 600px) {
   textarea,
   input:not([type='submit']) {
-    height: 50px;
-    padding-left: 16px;
-    width: 250px;
+    max-width: 500px;
   }
-  
-  textarea {
-    padding-top: 16px;
-    resize: none;
-    height: 250px;
+}
+
+@media (max-width: 900px) {
+  .sectionTitle {
+    text-align: center;
+    padding-top: 250px;
+    padding-bottom: 20px;
   }
-  
-  input,
-  textarea {
-    border-radius: 20px;
-    border: #888 1px solid;
-    box-sizing: border-box;
-    justify-self: center;
-    background-color: var(--background-color);
-    color: var(--form-text-color);
+}
+
+@media (min-width: 800px) {
+  textarea,
+  input:not([type='submit']) {
+    max-width: 600px;
   }
-  
-  ::placeholder {
-    color: var(--form-text-color);
+}
+
+/* Placeholder color */
+::placeholder {
+  color: #888;
+}
+
+/* Submit button styling */
+.submitButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+  margin: auto;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  transform: scale(1.05);
+}
+
+.submitButton:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* Modal Styling */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0px;
+}
+
+.modalHeader h2 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.modalBody {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalBody p {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.lottieAnimation {
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Adjust modal layout for smaller screens */
+@media (max-width: 600px) {
+  .modal {
+    width: 90%;
+    padding: 10px;
   }
-  
-  input[type='submit'] {
-    background-color: var(--btn-color);
-    color: var(--btn-text-color);
-    border: none;
-    border-radius: 20px;
-    width: 126px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
-    margin: auto;
+
+  .modalBody {
+    flex-direction: column;
   }
-  
-  input[type='submit']:hover {
-    transform: scale(1.05);
-  }
-  
-  input[type='submit']:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-  }
-  
-  @media (width >= 800px) {
-    textarea,
-    input:not([type='submit']) {
-      width: 600px;
-      font-size: 20px;
-    }
-    form {
-      gap: 40px;
-    }
-  }
-  
-  @media (width >= 1400px) {
-    textarea,
-    input:not([type='submit']) {
-      width: 800px;
-    }
-  }
+}

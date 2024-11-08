@@ -3,8 +3,6 @@ import styles from './HeroStyles.module.scss';
 import heroImg from '../../assets/delProfile.webp';
 import sun from '../../assets/sun.svg';
 import moon from '../../assets/moon.svg';
-import twitterLight from '../../assets/twitter-light.svg';
-import twitterDark from '../../assets/twitter-dark.svg';
 import githubLight from '../../assets/github-light.svg';
 import githubDark from '../../assets/github-dark.svg';
 import linkedinLight from '../../assets/linkedin-light.svg';
@@ -17,7 +15,6 @@ function Hero() {
   const sectionRef = useRef(null);
 
   const themeIcon = theme === 'light' ? sun : moon;
-  const twitterIcon = theme === 'light' ? twitterLight : twitterDark;
   const githubIcon = theme === 'light' ? githubLight : githubDark;
   const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
 
@@ -78,13 +75,10 @@ function Hero() {
         </h1>
         <h2>Mobile And Web Developer</h2>
         <span>
-          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-            <img src={twitterIcon} alt="Twitter icon" />
-          </a>
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/meiirzhan2000" target="_blank" rel="noopener noreferrer">
             <img src={githubIcon} alt="Github icon" />
           </a>
-          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://linkedin.com/in/meiirzhan-baitangatov-871632248" target="_blank" rel="noopener noreferrer">
             <img src={linkedinIcon} alt="LinkedIn icon" />
           </a>
         </span>

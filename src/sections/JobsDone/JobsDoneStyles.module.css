@@ -1,0 +1,126 @@
+/* General Container Styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.sectionTitle {
+  margin-bottom: 40px;
+}
+
+/* Job List Styling */
+.jobList {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 25px;
+  box-sizing: border-box;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  overflow: hidden;  /* Prevent overflow to prevent browser scroll */
+}
+
+/* Individual Job Item Styling */
+.item {
+  position: relative;
+  background: #679adc;
+  border: 2px solid #000;
+  border-radius: 15px;
+  padding: 30px;
+  box-sizing: border-box;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Slide Content Styling */
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Job Image Styling */
+.jobImage {
+  width: 100%; /* Ensures image takes the full width available */
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+/* Job Description Styling */
+.jobDescription {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--description-text-color);
+  margin-top: 20px;
+}
+
+/* Light and Dark Mode Variables */
+[data-theme="light"] {
+  --text-color: #090909;
+  --accent-color: #6c9bcd;
+  --card-bg: #fff;
+  --description-bg: #f0f0f0;
+  --text-muted: #666;
+  --description-text-color: #0c0c0c;
+}
+
+[data-theme="dark"] {
+  --text-color: #f0f0f0;
+  --accent-color: #00bfff;
+  --card-bg: #1c1c1e;
+  --description-bg: #333;
+  --text-muted: #aaa;
+  --description-text-color: #efefef;
+}
+
+/* Animation Durations */
+:root {
+  --dur: all 550ms ease-in-out;
+  --dur-a: all 650ms ease-in-out;
+  --dur-b: all 750ms ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .jobList {
+    padding: 10px;
+    overflow-x: hidden; /* Prevents horizontal overflow */
+  }
+
+  .item {
+    padding: 30px;
+    margin: 10px 0; /* Add margin between items to make it look better on mobile */
+  }
+
+  .jobDescription {
+    font-size: 1rem;
+  }
+}
+
+/* For screens less than or equal to 500px */
+@media (max-width: 500px) {
+  .jobList {
+    padding: 10px;
+    overflow-x: hidden; /* Prevents horizontal overflow */
+  }
+
+  .item {
+    padding: 30px;
+    margin: 5px 0; /* Adjust margin to make items fit well */
+  }
+
+  .slide {
+    padding: 10px; /* Adjust padding for better fit on small screens */
+  }
+
+  .jobDescription {
+    font-size: 0.9rem;
+  }
+}
+

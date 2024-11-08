@@ -1,41 +1,52 @@
+import React from 'react';
 import styles from './ProjectsStyles.module.css';
-import viberr from '../../assets/viberr.png';
-import freshBurger from '../../assets/fresh-burger.png';
-import hipsster from '../../assets/hipsster.png';
-import fitLift from '../../assets/fitlift.png';
-import ProjectCard from '../../common/ProjectCard';
+import { Link } from 'react-router-dom';
 
 function Projects() {
   return (
-    <section id="projects" className={styles.container}>
-      <h1 className="sectionTitle">Projects</h1>
-      <div className={styles.projectsContainer}>
-        <ProjectCard
-          src={viberr}
-          link="https://github.com/Ade-mir/company-landing-page-2"
-          h3="Viberr"
-          p="Streaming App"
-        />
-        <ProjectCard
-          src={freshBurger}
-          link="https://github.com/Ade-mir/company-landing-page-2"
-          h3="Fresh Burger"
-          p="Hamburger Restaurant"
-        />
-        <ProjectCard
-          src={hipsster}
-          link="https://github.com/Ade-mir/company-landing-page-2"
-          h3="Hipsster"
-          p="Glasses Shop"
-        />
-        <ProjectCard
-          src={fitLift}
-          link="https://github.com/Ade-mir/company-landing-page-2"
-          h3="FitLift"
-          p="Fitness App"
-        />
+    <div className={styles.container}>
+      <h1 className={styles.sectionTitle}>Projects Overview</h1>
+      <div className={styles.cardsContainer}>
+        <div className={styles.card}>
+          <div className={styles.box}>
+            <div className={styles.content}>
+              <h2>01</h2>
+              <h3>Front-End Development</h3>
+              <p>
+                Worked on interactive and responsive front-end projects using React, Vue, and CSS frameworks to build dynamic user interfaces.
+              </p>
+              <Link to="/projects-details/Front-End Development" className={styles.readMoreLink}>Read More</Link>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.card}>
+          <div className={styles.box}>
+            <div className={styles.content}>
+              <h2>02</h2>
+              <h3>Back-End Development</h3>
+              <p>
+                Built robust back-end services using Node.js, Express, and Java Spring Boot, focusing on API development and database integration.
+              </p>
+              <Link to="/projects-details/Back-End Development" className={styles.readMoreLink}>Read More</Link>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.card}>
+          <div className={styles.box}>
+            <div className={styles.content}>
+              <h2>03</h2>
+              <h3>Miscellaneous Projects</h3>
+              <p>
+                This section combines hackathon projects, data solutions, and miscellaneous endeavors, showcasing unique challenges and versatile solutions.
+              </p>
+              <Link to="/projects-details/Miscellaneous Projects" className={styles.readMoreLink}>Read More</Link>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
 

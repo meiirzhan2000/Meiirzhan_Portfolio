@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.menuButtonContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+
+  @media (max-width: 700px) {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  opacity: 0.5; /* Initially transparent */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for opacity and scaling on hover */
+
+  @media (max-width: 700px) {
+    font-size: 2rem;
+  }
+}
+
+.menuButton:hover {
+  opacity: 1; /* Fully visible on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.exitButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--btn-text-color);
+
+  @media (max-width: 700px) {
+    top: 10px;
+    right: 10px;
+    font-size: 1.8rem;
+  }
+}
+
+.menuList {
+  list-style: none;
+  opacity: 0;
+  animation: menuOpen 0.6s forwards;
+}
+
+@keyframes menuOpen {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.menuList li {
+  margin: 20px 0;
+}
+
+.menuList li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 3em;
+  font-weight: 700;
+  padding: 5px 20px;
+  transition: 0.5s;
+}
+
+.menuList:hover li a {
+  color: #ffffff55;
+}
+
+.menuList li:hover a {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.menuList li a:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 500px;
+  transition: letter-spacing 0.5s, left 0.5s;
+
+  @media (min-width: 1400px) {
+    font-size: 4em;
+  }
+
+  @media (min-width: 800px) and (max-width: 1399px) {
+    font-size: 3.5em;
+  }
+
+  @media (max-width: 799px) {
+    font-size: 2em;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 1.3em;
+  }
+}
+
+.menuList li a:hover:before {
+  content: attr(data-text);
+  opacity: 1;
+  left: 50%;
+  letter-spacing: 10px;
+  width: 1800px;
+  height: 1800px;
+}
+
+.menuList li:nth-child(6n+1) a:before {
+  background: #81ecec;
+}
+
+.menuList li:nth-child(6n+2) a:before {
+  background: #ff7675;
+}
+
+.menuList li:nth-child(6n+3) a:before {
+  background: #55efc4;
+}
+
+.menuList li:nth-child(6n+4) a:before {
+  background: #a29bfe;
+}
+
+.menuList li:nth-child(6n+5) a:before {
+  background: #fd79a8;
+}
+
+.menuList li:nth-child(6n+6) a:before {
+  background: #4ecbeb;
+}

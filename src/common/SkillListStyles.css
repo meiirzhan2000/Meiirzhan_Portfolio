@@ -1,0 +1,52 @@
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center items vertically within the container */
+  gap: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.skillItem:hover {
+  transform: scale(1.05);
+}
+
+/* Icon Styling */
+.icon {
+  font-size: 40px;
+  color: var(--icon-color);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skillItem:hover .icon {
+  color: var(--hover-icon-color);
+  transform: rotate(10deg);
+}
+
+/* Skill Text Styling */
+.skillText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.skillItem:hover .skillText {
+  color: var(--hover-text-color);
+}
+
+/* Define light and dark mode variables */
+[data-theme='light'] {
+  --icon-color: #333;
+  --hover-icon-color: #ff5722; /* Change this color for hover effect in light mode */
+  --text-color: #333;
+  --hover-text-color: #ff5722; /* Change this color for hover effect in light mode */
+}
+
+[data-theme='dark'] {
+  --icon-color: #fff;
+  --hover-icon-color: #ff9800; /* Change this color for hover effect in dark mode */
+  --text-color: #fff;
+  --hover-text-color: #ff9800; /* Change this color for hover effect in dark mode */
+}

@@ -22,9 +22,15 @@
   margin-bottom: 0px;
 }
 
+@media (width >= 900px) {
+  .sectionTitle {
+    margin-bottom: 0px;
+  }
+}
+
 .sectionSubtitle {
   font-size: 1.8rem;
-  margin-top: 40px;
+  margin-top: 0px;
   margin-bottom: 20px;
 }
 

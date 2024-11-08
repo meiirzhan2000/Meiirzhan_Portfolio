@@ -1,0 +1,209 @@
+#activities {
+  margin: 0;
+  background-color: #2e2e31;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.activitiesContainer {
+  width: calc(100vw - 150px); // Adjust width to be screen width - 150px
+  height: auto; // Allow height to adjust to fit content
+  max-height: 600px;
+  max-width: 1200px;
+  min-height: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+
+  @media (max-width: 900px) {
+    width: calc(100vw - 80px); // Adjust width for smaller screens
+    flex-direction: column; // Stack components vertically
+    justify-content: flex-start;
+    padding-top: 100px;
+    gap: 300px;
+  }
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+    gap: 300px; 
+  }
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 0px;
+
+  @media (max-width: 900px) {
+    margin-bottom: 40px; // Reduce spacing for smaller screens
+    padding-bottom: 20px; // Add padding below the title for smaller screens
+  }
+
+  @media (max-width: 450px) {
+    margin-bottom: 40px; // Further reduce spacing for mobile view
+    padding-bottom: 20px; // Increase padding to provide better spacing on small devices
+  }
+}
+
+.panel {
+  height: 270px;
+  width: 190px;
+  position: relative;
+  margin-bottom: 15px; // Margin to add spacing between cards
+
+  &:hover {
+    .card {
+      filter: blur(1.5px);
+    }
+    .card1,
+    .card2,
+    .card3 {
+      background-size: 115% 115%;
+    }
+    .title {
+      color: rgba(118, 113, 113, 0.2);
+    }
+    .border {
+      border: 1px solid rgb(59, 41, 199);
+    }
+    .slide {
+      bottom: 0px;
+    }
+    .ring:before,
+    .ring:after {
+      transform: translateX(-50%) translateY(-50%) rotate(310deg);
+    }
+  }
+}
+
+.ring,
+.card,
+.border,
+.slide,
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ring {
+  color: #fffbf1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 170px;
+}
+
+.card {
+  background: #f0ead6;
+  position: relative;
+  transition: all 1s;
+  height: 270px;
+  width: 190px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  opacity: 0.65;
+}
+
+.card1,
+.card2,
+.card3 {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.card1 {
+  background-image: url('../../assets/at1.jpg');
+}
+
+.card2 {
+  background-image: url('../../assets/at2.jpg');
+}
+
+.card3 {
+  background-image: url('../../assets/at3.jpg');
+}
+
+.ring:before,
+.ring:after {
+  content: "";
+  padding: 0.7em 0.4em;
+  position: absolute;
+  left: 50%;
+  width: 115%;
+  top: 50%;
+  display: block;
+  border: 5px solid #50c9c3;
+  border-radius: 50%;
+  transition: transform 1s;
+  transform: translateX(-50%) translateY(-50%) rotate(50deg);
+}
+
+.ring:before {
+  border-color: rgb(70, 165, 242) rgb(70, 165, 242) rgba(239, 241, 246, 0) rgba(238, 240, 245, 0);
+  z-index: -1;
+}
+
+.ring:after {
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgb(70, 165, 242) rgb(70, 165, 242);
+}
+
+.title {
+  text-align: center;
+  font-family: "Playfair Display";
+  font-size: 32px;
+  font-weight: 700;
+  transition: all 1s;
+  top: 0;
+  margin-bottom: 10px; // Space between title and content
+
+  @media (max-width: 900px) {
+    margin-bottom: 15px; // Adjust spacing for smaller screens
+  }
+}
+
+.para {
+  text-align: center;
+  position: relative; // Changed from absolute to relative to move it above the card
+  font-family: "Raleway";
+  font-size: 16px;
+  padding: 10px 0; // Adjusted padding for better appearance
+  margin: 0;
+  top: -20px; // Adjusted position to move it above the card content
+
+  @media (max-width: 450px) {
+    padding-bottom: 10px;
+  }
+}
+
+.border {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  height: 260px;
+  width: 180px;
+  transition: border 1s;
+  overflow: hidden;
+}
+
+.slide {
+  cursor: pointer;
+  height: 260px;
+  width: 180px;
+  position: absolute;
+  border: 1px solid black;
+  bottom: -270px;
+  background: rgba(0, 0, 0, 0.5);
+  transition: bottom 1s;
+  flex-direction: column;
+}
+
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
